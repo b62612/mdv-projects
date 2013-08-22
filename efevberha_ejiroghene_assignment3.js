@@ -81,7 +81,7 @@ var obj5
  									
  
        				 				 }, //closes performanceStats (shirt49)
-       				 		"playerGradeLevel" : {
+       				 		 "playerGradeLevel" : {
        				 							"dribbling": 6,
        				 							"clubLoyalty": 10,
        				 							"ballControl": 7,
@@ -132,7 +132,7 @@ var obj5
  									
  
        				 				 }, //closes performanceStats (shirt55)
-       				 		"playerGradeLevel" : {
+       				 		 "playerGradeLevel" : {
        				 							"dribbling": 8,
        				 							"clubLoyalty": 2,
        				 							"ballControl": 6,
@@ -183,7 +183,7 @@ var obj5
  									
  
        				 				 }, //closes performanceStats (shirt84)
-       				 		"playerGradeLevel" : {
+       				 		 "playerGradeLevel" : {
        				 							"dribbling": 2,
        				 							"clubLoyalty": 4,
        				 							"ballControl": 9,
@@ -202,5 +202,5 @@ var obj5
 
 					
 					
-		}//closes playerStat property block
+		}//closes playerStats property block
 };
