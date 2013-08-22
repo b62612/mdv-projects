@@ -1,5 +1,5 @@
 //alert("JavaScript works!");
-																					{
+																					
 // Ejiroghene Efevberha
 // SDI 1308
 // Deliverable 3
@@ -18,8 +18,7 @@ var obj4
 var obj5
 
 										 
-										 
-																			{
+{
 		// my method procedure (# of surplusPlayers)
 		console.log ("NUMBER OF PLAYERS FOR THE MARKET");
 		var surplus;
@@ -35,80 +34,29 @@ var obj5
 			checkSurplus(2);
 			console.log (" ");
 
-		}								 
+}								 
 										 
-										 				{
-		// my properties (PlayerStats of surplusPlayers)
-		players = {
-    "shirtNumber49" : {
-    	"name": "Sunday Mba",
-		"versatility": [
-		    "Right-Wing",
-			"Left-Wing", 
-			"Midfield-Central"
-		],
-		"age": 24,
-		"height": "1.94m",
-		"isPlayerInjured": false,
-		"performanceStats" : {
-			"assistsLastYears":{
-		  	"year 1":6,
-		  	"year 2":11,
-		  	"year 3":9,
-		  	"year 4":3
-			}
-		},
-		"goalsLastYears": [12, 3, 5] 
-	},
-	
-	"shirtNumber55": {
-		"name": "Ndubuisi Agbim",
-		"versatility": [
-		    "Keeping", 
-	  		"Spot-Kicks", 
-		    "Skipper"
-	  	],
-		"age": 28,
-		"height": "1.80m",
-		"isPlayerInjured": false,
-		"performanceStats": {
-		     "assistsLastYears":{
-		  	 "year 1":0,
-	  		 "year 2":0,
-	 		 "year 3":1,
-			 "year 4":2
-			 }
-		},
-		"goalsLastYears": [2, 3, 0]
-	},
-	"shirtNumber84": {
-		"name": "Efetobo Oghene",
-		"versatility": [
-		    "Central-Attack", 
-		    "Left-Wing", 
-		    "Midfield-Attack"
-		],
-		"age": 20,
-		"height": "1.75m",
-		"isPlayerInjured": true,
-		"performanceStats": {
-		  	"assistsLastYears":{
-			"year 1":10,
-		  	"year 2":15,
-		  	"year 3":11,
-		  	"year 4":9
-		    }
-		},
-        "goalsLastYears": [21, 14, 25]
-	}
-}
-
+										 				
 var thisYearGoals = 212;
-	
+
+var handleData = function (clubs) {	
+	var output = "";
+	for (var i = 0; i < clubs.soccerClubs.length; i++){
+		var club = clubs.soccerClubs[i]
+		output += "Profile of clubs interested in signing player: \n";
+		output += "Name: " + club.clubName + ", Year Founded: " + club.foundingYear + ", Table Position: " + club.tablePosition + '\n\n';
+		
+	};
+	return output;
+};
+console.log(clubsData);
+var data = handleData(clubsData);
+console.log(data);
+
 var playerStats = {
 	checkProlificacy: function (player, thisYearGoals) {
 		var totalGoals = 0;
-		var output = '';
+		var output = "";
    	 	for (var i = 0; i < player.goalsLastYears.length; i++) {
             totalGoals = totalGoals + player.goalsLastYears[i];
 			output += "Goals scored in Year " +  ( i + 1) + " : " + player.goalsLastYears[i]  + '\n';
@@ -149,5 +97,4 @@ for (var i in players) {
 	var player49pro = playerStats.checkProlificacy(players[i], thisYearGoals);
 	console.log(player49pro + '\n\n');	
 }
-}
-};
+
