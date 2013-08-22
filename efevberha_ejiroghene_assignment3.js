@@ -41,8 +41,9 @@ var obj5
 		// my properties for surplusPlayers object (obj1)
 		var performanceStats;
 		var prolificacy = checkProlificacy;
+		
 		playerStats = {
-	   				"shirtNumber": 49,
+			"shirtNumber": 49 {
 	   				"name": "Sunday Mba",
 	  				"position": "midfielder",
 	  				"age": 24,
@@ -69,14 +70,87 @@ var obj5
            													 			((totalGoals + thisYearGoals) / (i + 2)));
            													 			};//closes if statement
        								 						 };//closes for loop            
-    								 	  };//closes checkProlificacy function
+    								 	  };//closes checkProlificacy function (shirt49)
                 					 	  return data;
                 					      console.log ("Here is a summary of goals he scored in the last few years: " +checkProlificacy(3,goalsLastYears));
-									 } //closes prolificacy function  
+									 } //closes prolificacy function  (shirt49)
  									
  
-       				 				 } //closes performanceStats
-       				};//closes playerStats
+       				 				 } //closes performanceStats (shirt49)
+       		};//closes shirtNumber49
+       		"shirtNumber": 55 {
+	   				"name": "Ndubuisi Agbim",
+	  				"position": "keeper",
+	  				"age": 28,
+	  				"height": "1.80m",
+	   				"isPlayerInjured": false,
+       				"performanceStats": {
+       				  				  "assistsLastYears":{
+       				  				  			 "year1":0,
+       				  				  			 "year2":0,
+       				  				 			 "year3":1,
+       				  				 			 "year4":2},
+       				  				  "prolificacy": function () {
+									  var goalsLastYears = [2, 3, 0];
+									  var totalGoals = 0;
+									  var checkProlificacy = function(thisYearGoals, data){
+									  
+															 for (var i = 0; i < data.length; i++){
+    														 totalGoals = totalGoals + data [i]; 
+
+    														 console.log ("Goals scored in Year: " + ( i + 1 ) + ".  Season end prolificacy = " + 
+                											 (totalGoals / (i + 1)));
+        													 			if (i === 2) {
+           													 			console.log("   After this year's season end: Prolificacy = " +
+           													 			((totalGoals + thisYearGoals) / (i + 2)));
+           													 			};//closes if statement
+       								 						 };//closes for loop            
+    								 	  };//closes checkProlificacy function (shirt55)
+                					 	  return data;
+                					      console.log ("Here is a summary of goals he scored in the last few years: " +checkProlificacy(1,goalsLastYears));
+									 } //closes prolificacy function  (shirt55)
+ 									
+ 
+       				 				 } //closes performanceStats (shirt55)
+       		};//closes shirtNumber55
+       		
+       				"shirtNumber": 84 {
+	   				"name": "Efetobo Oghene",
+	  				"position": "striker",
+	  				"age": 20,
+	  				"height": "1.75m",
+	   				"isPlayerInjured": true,
+       				"performanceStats": {
+       				  				  "assistsLastYears":{
+       				  				  			 "year1":10,
+       				  				  			 "year2":15,
+       				  				 			 "year3":11,
+       				  				 			 "year4":9},
+       				  				  "prolificacy": function () {
+									  var goalsLastYears = [21, 14, 25];
+									  var totalGoals = 0;
+									  var checkProlificacy = function(thisYearGoals, data){
+									  
+															 for (var i = 0; i < data.length; i++){
+    														 totalGoals = totalGoals + data [i]; 
+
+    														 console.log ("Goals scored in Year: " + ( i + 1 ) + ".  Season end prolificacy = " + 
+                											 (totalGoals / (i + 1)));
+        													 			if (i === 2) {
+           													 			console.log("   After this year's season end: Prolificacy = " +
+           													 			((totalGoals + thisYearGoals) / (i + 2)));
+           													 			};//closes if statement
+       								 						 };//closes for loop            
+    								 	  };//closes checkProlificacy function (shirt84)
+                					 	  return data;
+                					      console.log ("Here is a summary of goals he scored in the last few years: " +checkProlificacy(10,goalsLastYears));
+									 } //closes prolificacy function  (shirt84)
+ 									
+ 
+       				 				 } //closes performanceStats (shirt84)
+       		};//closes shirtNumber84
+       		
+       	};//closes playerStats
        				  
 
 
