@@ -39,168 +39,115 @@ var obj5
 										 
 										 				{
 		// my properties (PlayerStats of surplusPlayers)
-		var shirtNumber;
-		var performanceStats;
-		var playerStats = {
-		        "shirtNumber49" : {
-		        			  "name": "Sunday Mba",
-	  						  "versatility": [
-	  							 		   "Right-Wing",
-	  									   "Left-Wing", 
-	  									   "Midfield-Central"
-	  									   ],
-	  						  "age": 24,
-	  						  "height": "1.94m",
-	   						  "isPlayerInjured": false,
-       						  "performanceStats" : {
-       				  				  "assistsLastYears":{
-       				  				  			 "year1":6,
-       				  				  			 "year2":11,
-       				  				 			 "year3":9,
-       				  				 			 "year4":3
-       				  				 			 },
-       				  				  "prolificacy": function () {
-									  var goalsLastYears = [12, 3, 5];
-									  var totalGoals = 0;
-									  var checkProlificacy = function(thisYearGoals, data){
-									  
-															 for (var i = 0; i < data.length; i++){
-    														 totalGoals = totalGoals + data [i]; 
+		players = {
+    "shirtNumber49" : {
+    	"name": "Sunday Mba",
+		"versatility": [
+		    "Right-Wing",
+			"Left-Wing", 
+			"Midfield-Central"
+		],
+		"age": 24,
+		"height": "1.94m",
+		"isPlayerInjured": false,
+		"performanceStats" : {
+			"assistsLastYears":{
+		  	"year 1":6,
+		  	"year 2":11,
+		  	"year 3":9,
+		  	"year 4":3
+			}
+		},
+		"goalsLastYears": [12, 3, 5] 
+	},
+	
+	"shirtNumber55": {
+		"name": "Ndubuisi Agbim",
+		"versatility": [
+		    "Keeping", 
+	  		"Spot-Kicks", 
+		    "Skipper"
+	  	],
+		"age": 28,
+		"height": "1.80m",
+		"isPlayerInjured": false,
+		"performanceStats": {
+		     "assistsLastYears":{
+		  	 "year 1":0,
+	  		 "year 2":0,
+	 		 "year 3":1,
+			 "year 4":2
+			 }
+		},
+		"goalsLastYears": [2, 3, 0]
+	},
+	"shirtNumber84": {
+		"name": "Efetobo Oghene",
+		"versatility": [
+		    "Central-Attack", 
+		    "Left-Wing", 
+		    "Midfield-Attack"
+		],
+		"age": 20,
+		"height": "1.75m",
+		"isPlayerInjured": true,
+		"performanceStats": {
+		  	"assistsLastYears":{
+			"year 1":10,
+		  	"year 2":15,
+		  	"year 3":11,
+		  	"year 4":9
+		    }
+		},
+        "goalsLastYears": [21, 14, 25]
+	}
+}
 
-    														 console.log ("Goals scored in Year: " + ( i + 1 ) + ".  Season end prolificacy = " + 
-                											 (totalGoals / (i + 1)));
-        													 			if (i === 2) {
-           													 			console.log("   After this year's season end: Prolificacy = " +
-           													 			((totalGoals + thisYearGoals) / (i + 2)));
-           													 			};//closes if statement
-       								 						 };//closes for loop            
-    								 	  };//closes checkProlificacy function (shirt49)
-                					 	  return data;
-                					      console.log ("Here is a summary of goals he scored in the last few years: " +checkProlificacy(3,goalsLastYears));
-									 } //closes prolificacy function  (shirt49)
- 									
- 
-       				 				 }, //closes performanceStats (shirt49)
-       				 		 "playerGradeLevel" : {
-       				 							"dribbling": 6,
-       				 							"clubLoyalty": 10,
-       				 							"ballControl": 7,
-       				 							"speed": 4,
-       				 							"gradePlayer": function () {
-       				 							var grade = (this.dribbling + this.clubLoyalty + this.ballControl + this.speed)/(playerGradeLevel.length - 1);
-       				 							return grade;
-       				 										 }//closes gradePlayer function (shirt49)
-       				 							
-       				 							}//closes playerGradeLevel (shirt49)
-       		},//closes shirtNumber49
-       			"shirtNumber55": {
-	   						   "name": "Ndubuisi Agbim",
-	  						   "versatility": [
-	  						  				"Keeping", 
-	  						  				"Spot-Kicks", 
-	  						  				"Skipper"
-	  						  				],
-	  						   "age": 28,
-	  						   "height": "1.80m",
-	   					       "isPlayerInjured": false,
-       						   "performanceStats": {
-       				  				  "assistsLastYears":{
-       				  				  			 "year1":0,
-       				  				  			 "year2":0,
-       				  				 			 "year3":1,
-       				  				 			 "year4":2
-       				  				 			 },
-       				  				  "prolificacy": function () {
-									  var goalsLastYears = [2, 3, 0];
-									  var totalGoals = 0;
-									  var checkProlificacy = function(thisYearGoals, data){
-									  
-															 for (var i = 0; i < data.length; i++){
-    														 totalGoals = totalGoals + data [i]; 
+var thisYearGoals = 212;
+	
+var playerStats = {
+	checkProlificacy: function (player, thisYearGoals) {
+		var totalGoals = 0;
+		var output = '';
+   	 	for (var i = 0; i < player.goalsLastYears.length; i++) {
+            totalGoals = totalGoals + player.goalsLastYears[i];
+			output += "Goals scored in Year " +  ( i + 1) + " : " + player.goalsLastYears[i]  + '\n';
+			output += "Prolificacy in Year: " + ( i + 1 ) + " : " +  (totalGoals / (i + 1))  + '\n';
+	 		if (i === 2) {
+	 			output += "After this year's season end: Prolificacy = " + ((totalGoals + thisYearGoals) / (i + 2)) + '\n';
+	 		};//closes if statement
+	    };//closes for loop
+		return output;
+	},
+	
+	getPlayerStats : function (player) {
+		var stats = "Name: " + player.name + '\n';
+		stats += "Age : " + player.age + '\n';
+		stats += "Versatility : ";
+		//loop versatility
+		//player.versatility.join(', ');
+		var i = 0
+		while (i < player.versatility.length) {
+			stats += player.versatility[i] + ", ";
+			i++;
+		}
+		stats = stats.substr(0, stats.length - 2) + '\n';
+		
+		//assists
+		stats += "\nAssists : \n";
+		for (var i in player.performanceStats.assistsLastYears) {
+			stats += " " + i  + " : " + player.performanceStats.assistsLastYears[i] + '\n';
+		}
+		return stats;
+	}	
+};
 
-    														 console.log ("Goals scored in Year: " + ( i + 1 ) + ".  Season end prolificacy = " + 
-                											 (totalGoals / (i + 1)));
-        													 			if (i === 2) {
-           													 			console.log("   After this year's season end: Prolificacy = " +
-           													 			((totalGoals + thisYearGoals) / (i + 2)));
-           													 			};//closes if statement
-       								 						 };//closes for loop            
-    								 	  };//closes checkProlificacy function (shirt55)
-                					 	  return data;
-                					      console.log ("Here is a summary of goals he scored in the last few years: " +checkProlificacy(1,goalsLastYears));
-									 } //closes prolificacy function  (shirt55)
- 									
- 
-       				 				 }, //closes performanceStats (shirt55)
-       				 		 "playerGradeLevel" : {
-       				 							"dribbling": 8,
-       				 							"clubLoyalty": 2,
-       				 							"ballControl": 6,
-       				 							"speed": 9,
-       				 							"gradePlayer": function () {
-       				 							var grade = (this.dribbling + this.clubLoyalty + this.ballControl + this.speed)/(playerGradeLevel.length - 1);
-       				 							return grade;
-       				 										 }//closes gradePlayer function (shirt55)
-       				 							
-       				 							}//closes playerGradeLevel (shirt55)
-       		},//closes shirtNumber55
-       		
-       			"shirtNumber84": {
-	   						   "name": "Efetobo Oghene",
-	  						   "versatility": [
-	  						   				"Central-Attack", 
-	  						   				"Left-Wing", 
-	  						   				"Midfield-Attack"
-	  						   				],
-	  				      	   "age": 20,
-	  						   "height": "1.75m",
-	   						   "isPlayerInjured": true,
-       						   "performanceStats": {
-       				  				  "assistsLastYears":{
-       				  				  			 "year1":10,
-       				  				  			 "year2":15,
-       				  				 			 "year3":11,
-       				  				 			 "year4":9},
-       				  				  "prolificacy": function () {
-									  var goalsLastYears = [21, 14, 25];
-									  var totalGoals = 0;
-									  var checkProlificacy = function(thisYearGoals, data){
-									  
-															 for (var i = 0; i < data.length; i++){
-    														 totalGoals = totalGoals + data [i]; 
-
-    														 console.log ("Goals scored in Year: " + ( i + 1 ) + ".  Season end prolificacy = " + 
-                											 (totalGoals / (i + 1)));
-        													 			if (i === 2) {
-           													 			console.log("   After this year's season end: Prolificacy = " +
-           													 			((totalGoals + thisYearGoals) / (i + 2)));
-           													 			};//closes if statement
-       								 						 };//closes for loop            
-    								 	  };//closes checkProlificacy function (shirt84)
-                					 	  return data;
-                					      console.log ("Here is a summary of goals he scored in the last few years: " +checkProlificacy(10,goalsLastYears));
-									 } //closes prolificacy function  (shirt84)
- 									
- 
-       				 				 }, //closes performanceStats (shirt84)
-       				 		 "playerGradeLevel" : {
-       				 							"dribbling": 2,
-       				 							"clubLoyalty": 4,
-       				 							"ballControl": 9,
-       				 							"speed": 5,
-       				 							"gradePlayer": function () {
-       				 							var grade = (this.dribbling + this.clubLoyalty + this.ballControl + this.speed)/(playerGradeLevel.length - 1);
-       				 							return grade;
-       				 										 }//closes gradePlayer function (shirt84)
-       				 							
-       				 							}//closes playerGradeLevel (shirt84)
-       		}//closes shirtNumber84
-       		
-       	};//closes playerStats
-       				  
-
-
-					
-					
-		}//closes playerStats property block
+//Prolificacy
+for (var i in players) {
+	var player49stats = playerStats.getPlayerStats(players[i]);
+	console.log(player49stats + '\n');
+	var player49pro = playerStats.checkProlificacy(players[i], thisYearGoals);
+	console.log(player49pro + '\n\n');	
+}
+}
 };
