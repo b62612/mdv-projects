@@ -20,7 +20,7 @@ var obj5
 										 
 										 
 																			{
-		// my method procedure for surplusPlayers (obj1)
+		// my method procedure (# of surplusPlayers)
 		console.log ("NUMBER OF PLAYERS FOR THE MARKET");
 		var surplus;
 		var requiredSurplus = 3;
@@ -38,8 +38,7 @@ var obj5
 		}								 
 										 
 										 				{
-		// my properties for surplusPlayers object (obj1)
-		var performanceStats;
+		// my properties (PlayerStats of surplusPlayers)
 		var shirtNumber;
 		var performanceStats;
 		var playerStats = {
@@ -81,7 +80,18 @@ var obj5
 									 } //closes prolificacy function  (shirt49)
  									
  
-       				 				 } //closes performanceStats (shirt49)
+       				 				 }, //closes performanceStats (shirt49)
+       				 		"playerGradeLevel" : {
+       				 							"dribbling": 6,
+       				 							"clubLoyalty": 10,
+       				 							"ballControl": 7,
+       				 							"speed": 4,
+       				 							"gradePlayer": function () {
+       				 							var grade = (this.dribbling + this.clubLoyalty + this.ballControl + this.speed)/(playerGradeLevel.length - 1);
+       				 							return grade;
+       				 										 }//closes gradePlayer function (shirt49)
+       				 							
+       				 							}//closes playerGradeLevel (shirt49)
        		},//closes shirtNumber49
        			"shirtNumber55": {
 	   						   "name": "Ndubuisi Agbim",
@@ -121,7 +131,18 @@ var obj5
 									 } //closes prolificacy function  (shirt55)
  									
  
-       				 				 } //closes performanceStats (shirt55)
+       				 				 }, //closes performanceStats (shirt55)
+       				 		"playerGradeLevel" : {
+       				 							"dribbling": 8,
+       				 							"clubLoyalty": 2,
+       				 							"ballControl": 6,
+       				 							"speed": 9,
+       				 							"gradePlayer": function () {
+       				 							var grade = (this.dribbling + this.clubLoyalty + this.ballControl + this.speed)/(playerGradeLevel.length - 1);
+       				 							return grade;
+       				 										 }//closes gradePlayer function (shirt55)
+       				 							
+       				 							}//closes playerGradeLevel (shirt55)
        		},//closes shirtNumber55
        		
        			"shirtNumber84": {
@@ -161,7 +182,18 @@ var obj5
 									 } //closes prolificacy function  (shirt84)
  									
  
-       				 				 } //closes performanceStats (shirt84)
+       				 				 }, //closes performanceStats (shirt84)
+       				 		"playerGradeLevel" : {
+       				 							"dribbling": 2,
+       				 							"clubLoyalty": 4,
+       				 							"ballControl": 9,
+       				 							"speed": 5,
+       				 							"gradePlayer": function () {
+       				 							var grade = (this.dribbling + this.clubLoyalty + this.ballControl + this.speed)/(playerGradeLevel.length - 1);
+       				 							return grade;
+       				 										 }//closes gradePlayer function (shirt84)
+       				 							
+       				 							}//closes playerGradeLevel (shirt84)
        		}//closes shirtNumber84
        		
        	};//closes playerStats
@@ -170,5 +202,5 @@ var obj5
 
 					
 					
-		}
+		}//closes playerStat property block
 };
