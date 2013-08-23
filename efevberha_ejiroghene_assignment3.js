@@ -40,16 +40,17 @@ var jsonData; // functions and procedures are based on JsonData object
 						", Table Position: " + club.tablePosition + '\n\n';		
 			
 			//nested for loop to calculate how offers compare to parent club minimum demand
-			var calcBizReady = function (ourMinPrice){		
+			var calcBizReady = function (ourMinPrice){	
+			
 						for (var  b = 0	; b < club.previousBidsinMill.length; b++){
-						var bid = club.previousBidsinMill[b]
-						var diffOutput;
-						diffOutput = ourMinPrice - bid
+						var ourMinPrice = 28;
+						var previousBid = club.previousBidsinMill[b]
+						var diffOutput;	
+						diffOutput = ourMinPrice - previousBid
 						}
 						return diffOutput;
 						};	
-						console.log(bid);
-						var clubBiz = calcBizReady(bid)	
+						var clubBiz = calcBizReady(previousBid)	
 						console.log(clubBiz);	
 	 		};
 			return clubOutput;
