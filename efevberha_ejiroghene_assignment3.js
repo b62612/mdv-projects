@@ -28,7 +28,7 @@ var jsonData; // functions and procedures are based on JsonData object
 			console.log (" ");
 
 }								 
-		// method accessor and nested loop
+		// nested loop
 		var displayClubProfile = function (clubs) {	
 		var clubOutput = "";
 			for (var i = 0; i < clubs.soccerClubs.length; i++){
@@ -74,7 +74,7 @@ var jsonData; // functions and procedures are based on JsonData object
 	    				  };//closes for loop
 						  return output;
 		},
-	
+		// method accessor
 		getPlayerStats : function (player) { 
 						 var stats = "Name: " + player.name + '\n';
 						 stats += "Age : " + player.age + '\n';
@@ -88,22 +88,23 @@ var jsonData; // functions and procedures are based on JsonData object
 								  stats += player.versatility[i] + ", ";
 								  i++;
 								}
-		stats = stats.substr(0, stats.length - 2) + '\n';
-		//assists
-		stats += "\nAssists : \n";
+								stats = stats.substr(0, stats.length - 2) + '\n';
+								
+								//assists
+								stats += "\nAssists : \n";
 								// for-loop assists
 								for (var i in player.performanceStats.assistsLastYears) {
 								stats += " " + i  + " : " + player.performanceStats.assistsLastYears[i] + '\n';
-						}
-		return stats;
-		}	
-	};
+								}
+						return stats;
+						}	
+				};
 
-	// for-in loop Prolificacy
-	for (var i in players) {
-	var player49stats = playerStats.getPlayerStats(players[i]);
-	console.log(player49stats + '\n');
-	var player49pro = playerStats.checkProlificacy(players[i], thisYearGoals);
-	console.log(player49pro + '\n\n');	
+								// for-in loop Prolificacy
+								for (var i in players) {
+								var player49stats = playerStats.getPlayerStats(players[i]);
+								console.log(player49stats + '\n');
+								var player49pro = playerStats.checkProlificacy(players[i], thisYearGoals);
+								console.log(player49pro + '\n\n');	
 	}
 
